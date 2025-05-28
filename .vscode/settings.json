@@ -1,0 +1,7 @@
+{
+    "cmake.ignoreCMakeListsMissing": true,
+    "cSpell.enabled": false,
+    "cSpell.enabledFileTypes": {
+        "dart": true
+    }
+}
