@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364119963723",
+    "project_id": "e-commerce-app-clean-arch",
+    "storage_bucket": "e-commerce-app-clean-arch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364119963723:android:0f0f261c93fb401a52b5ce",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_appclean_arch_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnOJbJ_v7GegCDWSIBuc8s3ZwyPE1RxZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
