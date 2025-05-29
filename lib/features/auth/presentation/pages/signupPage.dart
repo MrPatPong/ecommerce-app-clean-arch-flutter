@@ -2,7 +2,7 @@ import 'package:ecommerce_appclean_arch_flutter/common/bloc/cubit/button_state_c
 import 'package:ecommerce_appclean_arch_flutter/common/bloc/cubit/button_state_state.dart';
 import 'package:ecommerce_appclean_arch_flutter/common/widgets/app_button.dart';
 import 'package:ecommerce_appclean_arch_flutter/features/auth/data/models/user_creation_req.dart';
-import 'package:ecommerce_appclean_arch_flutter/features/auth/domain/usecases/signup.dart';
+import 'package:ecommerce_appclean_arch_flutter/features/auth/domain/usecases/signupUse.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +32,7 @@ class Signup extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text(state.message ?? ''),
                     behavior: SnackBarBehavior.floating));
-                     context.go('/signin'); // Navigate to sign in page after success
+                context.go('/signin'); // Navigate to sign in page after success
               }
             },
             child: Column(

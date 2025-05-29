@@ -2,7 +2,7 @@ import 'package:ecommerce_appclean_arch_flutter/common/bloc/cubit/button_state_c
 import 'package:ecommerce_appclean_arch_flutter/common/bloc/cubit/button_state_state.dart';
 import 'package:ecommerce_appclean_arch_flutter/common/widgets/app_button.dart';
 import 'package:ecommerce_appclean_arch_flutter/features/auth/data/models/user_login_req.dart';
-import 'package:ecommerce_appclean_arch_flutter/features/auth/domain/usecases/signin.dart';
+import 'package:ecommerce_appclean_arch_flutter/features/auth/domain/usecases/signinUse.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -121,8 +121,7 @@ class Signin extends StatelessWidget {
                 color: Colors.blue, fontSize: 14, fontWeight: FontWeight.bold),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                context
-                    .go('/forgot-password'); // Navigate to forgot password page
+                context.go('/resetpass'); // Navigate to forgot password page
               },
           ),
         ],
