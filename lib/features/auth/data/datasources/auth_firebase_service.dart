@@ -44,7 +44,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         message = e.message ?? 'An unknown error occurred.';
       }
 
-      return Left(e.toString());
+      return Left(message);
     }
   }
 
