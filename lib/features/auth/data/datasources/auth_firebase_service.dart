@@ -7,6 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 abstract class AuthFirebaseService {
   Future<Either> signup(UserCreationReq user);
   Future<Either> login(UserloginReq user);
+  Future<Either> resetPassword(String email);
+  Future<bool> logInState();
 }
 
 class AuthFirebaseServiceImpl extends AuthFirebaseService {
@@ -56,6 +58,8 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         password: user.password!,
       );
 
+      await FirebaseAuth.instance.currentUser!.reload();
+
       return const Right('successfully');
     } on FirebaseAuthException catch (e) {
       String message = '';
@@ -71,6 +75,36 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       }
 
       return Left(message);
+    }
+  }
+
+  @override
+  Future<Either> resetPassword(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      return const Right('Password reset email sent successfully');
+    } on FirebaseAuthException catch (e) {
+      String message = '';
+
+      if (e.code == 'user-not-found') {
+        message = 'No user found for that email.';
+      } else if (e.code == 'invalid-email') {
+        message = 'The email address is not valid.';
+      } else {
+        message = e.message ?? 'An unknown error occurred.';
+      }
+
+      return Left(message);
+    }
+  }
+
+  @override
+  Future<bool> logInState() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
