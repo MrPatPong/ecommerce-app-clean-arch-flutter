@@ -32,8 +32,7 @@ class Signup extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text(state.message ?? ''),
                     behavior: SnackBarBehavior.floating));
-                
-                context.go('/signin'); // Navigate to sign in page after success
+                     context.go('/signin'); // Navigate to sign in page after success
               }
             },
             child: Column(
